@@ -10,7 +10,6 @@
 
 	<!-- Fonts -->
 	<link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
-
 </head>
 <body>
 	<div class="container header-logo-row">
@@ -46,11 +45,34 @@
 			</div>
 		</nav>
 	</div>
-</div>
 
 	@yield('content')
 
-			<!-- Scripts-->
+	<div class="container">
+		<div class="row panel-footer">
+			<div class="col-md-4">
+				<h3>Свяжитесь с нами</h3>
+				<p>Город Кропоткин, улица Целинная 25.<br>119019. Россия. Тел +7(999)000-00-00<br>info@mail.ru</p>
+			</div>
+			<div class="col-md-4">
+				<h3 class="text-center">Обслуживание клиентов</h3>
+				<div class="list-group">
+					<a class="list-group-item">Контакты</a>
+					<a class="list-group-item">Доставка</a>
+					<a class="list-group-item">Возврат</a>
+					<a class="list-group-item">Оплата и гарантия</a>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<h3 class="text-right">Мы принимаем</h3>
+				<div class="text-right">
+					<a><img src="/image/Visa.png"></a>
+					<a><img src="/image/Mastercard.png"></a>
+				</div>
+			</div>
+		</div>
+	</div>
+
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
 
