@@ -33,9 +33,26 @@ class ListController extends Controller {
 	}
 	public function main()
 	{
-		$list = Disk::all()->toArray();
+		$listDisk = Disk::all()->toArray();
+		$listTire = Tire::all()->toArray();
+		$listWheel = Wheel::all()->toArray();
 		//dd($wheels);
-		return view('pages.main', ['list' => $list]);
+		return view('pages.main', [
+				'title' => [
+						'titleDisk' => 'Диски на ваш вкус',
+						'titleTire' => 'Шины на ваш диск',
+						'titleWheel' => 'Колёса в сборе'
+				],
+				'list' => [
+					'listDisk' => $listDisk,
+					'listTire' => $listTire,
+					'listWheel' => $listWheel
+				]
+		]);
+	}
+	public function other()
+	{
+		return view('pages.other');
 	}
 
 

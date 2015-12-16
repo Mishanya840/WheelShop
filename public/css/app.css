@@ -40,6 +40,14 @@ body {
 .list-page-header h3{
   margin-top: 10px;
 }
+.list-page-header a{
+  text-decoration: none;
+  color: black;
+}
+.list-page-header a:hover {
+  text-decoration: none;
+  color: black;
+}
 .header-logo{
   margin-left: 60px;
   height: 60px !important;
@@ -48,19 +56,22 @@ body {
   height: 30px;
 }
 .slider{
-  /*/width: 1256px;*/
-  margin: 20px auto;
-  background: white;
+  margin: 0 50px;
   text-align: center;
 }
 .slider-item{
-  background: #fdf;
-  color: #3498db;
-  font-size: 36px;
-  line-height: 100px;
-  padding: 20px;
-
+  margin: 0 15px 0 15px;
 }
+.slider-item h4{
+  margin: 5px 0;
+}
+.slider-item p{
+  margin: 0;
+}
+.slider-item img{
+  max-height: 150px;
+}
+
 
 article,
 aside,

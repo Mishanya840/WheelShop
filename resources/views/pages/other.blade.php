@@ -1,6 +1,6 @@
 @extends('/index')
 
-@section('slider')
+@section('slider')>
 
 <div class="slider">
     <div class="slider-item">1</div>
@@ -16,5 +16,4 @@
     $(document).ready(function(){
         $('.slider').slick();
     });
-</script>
-@endsection
+</script>@endsection>
