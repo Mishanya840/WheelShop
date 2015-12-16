@@ -24,6 +24,9 @@ class CreateWheelsTable extends Migration {
 			$table->smallInteger('width');
 			$table->float('profile');
 			$table->boolean('winter');
+			$table->string('PCD', 5);
+			$table->smallInteger('ET');
+			$table->string('type', 12);
 			$table->timestamps();
 		});
 	}
