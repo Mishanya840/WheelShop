@@ -47,19 +47,19 @@ body {
 .shopping-cart{
   height: 30px;
 }
-.slider-item{
-  width: 187px;
-  display: inline-block;
+.slider{
+  /*/width: 1256px;*/
+  margin: 20px auto;
+  background: white;
+  text-align: center;
 }
-.slider-item h3{
-  background: #fff;
+.slider-item{
+  background: #fdf;
   color: #3498db;
   font-size: 36px;
   line-height: 100px;
-  margin: 10px;
-  padding: 2%;
-  position: relative;
-  text-align: center;
+  padding: 20px;
+
 }
 
 article,

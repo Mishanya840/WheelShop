@@ -31,10 +31,11 @@ class ListController extends Controller {
 		//dd($wheels);
 		return view('pages.list', ['title' => 'Диски на ваш вкус','list' => $list]);
 	}
-	public function other()
+	public function main()
 	{
-
-		return view('pages.main');
+		$list = Disk::all()->toArray();
+		//dd($wheels);
+		return view('pages.main', ['list' => $list]);
 	}
 
 
