@@ -6,60 +6,18 @@
             <h3>Колёса в сборе</h3>
         </div>
         <div class="row">
+        @foreach($wheels as $wheel)
+
             <div class="col-md-3">
                 <div class="thumbnail">
-                    <img src="/image/logo.png" alt="фото">
+                    <img src="{{ $wheel['img'] }}" alt="фото">
                     <div class="caption">
-                        <h4>Pirelli</h4>
-                        <p>Колёса новые. В отличном состоянии. Хорошие материалы и шипы. В наличии 4 штуки</p>
+                        <h4>{{ $wheel['title'] }}</h4>
+                        <p>{{ $wheel['description'] }}</p>
                     </div>
                 </div>
             </div>
-            <div class="col-md-3">
-                <div class="thumbnail">
-                    <img src="/image/logo.png" alt="фото">
-                    <div class="caption">
-                        <h4>Pirelli</h4>
-                        <p>Колёса новые. В отличном состоянии. Хорошие материалы и шипы. В наличии 4 штуки</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="thumbnail">
-                    <img src="/image/logo.png" alt="фото">
-                    <div class="caption">
-                        <h4>Pirelli</h4>
-                        <p>Колёса новые. В отличном состоянии. Хорошие материалы и шипы. В наличии 4 штуки</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="thumbnail">
-                    <img src="/image/logo.png" alt="фото">
-                    <div class="caption">
-                        <h4>Pirelli</h4>
-                        <p>Колёса новые. В отличном состоянии. Хорошие материалы и шипы. В наличии 4 штуки</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="thumbnail">
-                    <img src="/image/logo.png" alt="фото">
-                    <div class="caption">
-                        <h4>Pirelli</h4>
-                        <p>Колёса новые. В отличном состоянии. Хорошие материалы и шипы. В наличии 4 штуки</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="thumbnail">
-                    <img src="http://presentation/image/logo.png" alt="фото">
-                    <div class="caption">
-                        <h4>Pirelli</h4>
-                        <p>Колёса новые. В отличном состоянии. Хорошие материалы и шипы. В наличии 4 штуки</p>
-                    </div>
-                </div>
-            </div>
+        @endforeach
         </div>
         <div class="row panel-footer">
             <div class="col-md-4">

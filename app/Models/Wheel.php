@@ -9,7 +9,7 @@ class Wheel extends Model {
      *
      * @var string
      */
-    protected $table = 'wheel';
+    protected $table = 'wheels';
 
     /**
      * The attributes that are mass assignable.
