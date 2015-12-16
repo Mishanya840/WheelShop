@@ -48,6 +48,10 @@ body {
   text-decoration: none;
   color: black;
 }
+.list-item a, .list-item a:hover{
+  text-decoration: none;
+  color: black;
+}
 .header-logo{
   margin-left: 60px;
   height: 60px !important;
@@ -70,6 +74,16 @@ body {
 }
 .slider-item img{
   max-height: 150px;
+}
+/*------item----------*/
+.slider-nav img{
+  max-height: 150px;
+}
+.right-part button{
+  margin: 10px 0;
+}
+.right-part table td{
+
 }
 
 
