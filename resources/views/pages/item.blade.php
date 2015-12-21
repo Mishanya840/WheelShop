@@ -15,7 +15,7 @@
                     <span class="input-group-addon">шт.</span>
                 </div>
                 <div class="btn-group">
-                <button type="button" class="btn btn-default col-md-12">ДОБАВИТЬ В КОРЗИНУ</button>
+                <button type="button" data-id="{{$item['id']}}" id="addToCart" class="btn btn-default col-md-12" >ДОБАВИТЬ В КОРЗИНУ</button>
                 </div>
                 <div class="panel panel-default">
                     <div class="panel-heading">Основная информация</div>
@@ -67,5 +67,33 @@
             </div>
         </div>
     </div>
+    <script>
+        $(document).ready(function() {
+            $('#addToCart').click(function () {
+                var id;
+                var count;
+                count = $('input[name="count"]').val();
+                id = $('#addToCart').attr('data-id');
+                button = $(this); // объект кнопка
+                $.ajax({
+                    url: '/addToCart',
+                    type: "POST",
+                    data: { id: id,
+                            count: count
+                    },
+                    headers: {
+                        'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    success: function ($data) {
+                        console.log($data)
+                    },
+                    error: function (msg) {
+                        document.write(msg['responseText']);
+                    }
+                });
+            });
+        });
+
+    </script>
 
 @endsection

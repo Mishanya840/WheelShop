@@ -14,6 +14,21 @@ body {
   font-weight: 100;
   font-family: 'Lato';
 }
+.cart-relative-div {
+  position: relative;
+  height: 50px;
+}
+.cart-left-div{
+  position: absolute;
+  left: 10px;
+}
+.cart-right-div{
+  position: absolute;
+  right: 10px;
+}
+.cart-right-div button {
+  padding: 0 50px;
+}
 .mynavbar p{
   margin-right: 10px;
 }
@@ -65,6 +80,10 @@ body {
 }
 .slider-item{
   margin: 0 15px 0 15px;
+}
+.slider-item a, .slider-item a:hover{
+  text-decoration: none;
+  color: black;
 }
 .slider-item h4{
   margin: 5px 0;

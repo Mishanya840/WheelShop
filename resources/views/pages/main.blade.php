@@ -9,11 +9,13 @@
         <div class="slider">
             @foreach($list['listWheel'] as $item)
                 <div class="thumbnail slider-item">
-                    <img src="{{ $item['img'] }}" alt="фото">
-                    <div class="caption">
-                        <h4>{{ $item['title'] }}</h4>
-                        <p>Цена: {{ $item['cost'] }}р.</p>
-                    </div>
+                    <a href="/wheel/{{$item['id']}}">
+                        <img src="{{ $item['img'] }}" alt="фото">
+                        <div class="caption">
+                            <h4>{{ $item['title'] }}</h4>
+                            <p>Цена: {{ $item['cost'] }}р.</p>
+                        </div>
+                    </a>
                 </div>
             @endforeach
         </div>
@@ -23,11 +25,13 @@
         <div class="slider">
             @foreach($list['listDisk'] as $item)
                 <div class="thumbnail slider-item">
-                    <img src="{{ $item['img'] }}" alt="фото">
-                    <div class="caption">
-                        <h4>{{ $item['title'] }}</h4>
-                        <p>Цена: {{ $item['cost'] }}р.</p>
-                    </div>
+                    <a href="/disk/{{$item['id']}}">
+                        <img src="{{ $item['img'] }}" alt="фото">
+                        <div class="caption">
+                            <h4>{{ $item['title'] }}</h4>
+                            <p>Цена: {{ $item['cost'] }}р.</p>
+                        </div>
+                    </a>
                 </div>
             @endforeach
         </div>
@@ -37,11 +41,13 @@
         <div class="slider">
             @foreach($list['listTire'] as $item)
                 <div class="thumbnail slider-item">
-                    <img src="{{ $item['img'] }}" alt="фото">
-                    <div class="caption">
-                        <h4>{{ $item['title'] }}</h4>
-                        <p>Цена: {{ $item['cost'] }}р.</p>
-                    </div>
+                    <a href="/tire/{{$item['id']}}">
+                        <img src="{{ $item['img'] }}" alt="фото">
+                        <div class="caption">
+                            <h4>{{ $item['title'] }}</h4>
+                            <p>Цена: {{ $item['cost'] }}р.</p>
+                        </div>
+                    </a>
                 </div>
             @endforeach
         </div>

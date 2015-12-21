@@ -4,19 +4,24 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script type="text/javascript" src="/lib/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="/lib/jquery-migrate-1.2.1.min.js"></script>
+	<script type="text/javascript" src="/slick/slick.min.js"></script>
+	<script src="/lib/bootstrap.min.js"></script>
+{{--
+	<script src="{{asset("js/functions.js")}}"></script>
+--}}
+	<meta name="csrf-token" id="csrf-token" content="{{ csrf_token() }}">
 	<title>Laravel</title>
 
 	<link href="/css/app.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="/slick/slick.css"/>
 	<link rel="stylesheet" type="text/css" href="/slick/slick-theme.css"/>
 	<!-- Fonts -->
-	<link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
+	<link href='/lib/fontRoboto.css' rel='stylesheet' type='text/css'>
 </head>
 <body>
-	<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-	<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-	<script type="text/javascript" src="/slick/slick.min.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
 
 	<div class="container header-logo-row">
 		<div class="media">
@@ -30,7 +35,7 @@
 				<h4 class="header-text">Интернет-магазин колёс на ваш автомобиль</h4>
 			</div>
 			<div class="media-right ">
-				<a href="#">
+				<a href="{{route('shoppingCart')}}">
 					<img src="/image/glyphicons-203-shopping-cart.png" alt="..." class="shopping-cart">
 					<span class="badge">4</span>
 				</a>
@@ -80,6 +85,11 @@
 	</div>
 
 
+
+
+{{--
+	<script type="text/javascript" src="/js/main.js"></script>
+--}}
 
 </body>
 </html>
