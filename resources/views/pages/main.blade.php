@@ -12,7 +12,7 @@
                     <a href="/wheel/{{$item['id']}}">
                         <img src="{{ $item['img'] }}" alt="фото">
                         <div class="caption">
-                            <h4>{{ $item['title'] }}</h4>
+                            <h4 class="first-up">{{ $item['title'] }}</h4>
                             <p>Цена: {{ $item['cost'] }}р.</p>
                         </div>
                     </a>
@@ -28,7 +28,7 @@
                     <a href="/disk/{{$item['id']}}">
                         <img src="{{ $item['img'] }}" alt="фото">
                         <div class="caption">
-                            <h4>{{ $item['title'] }}</h4>
+                            <h4 class="first-up">{{ $item['title'] }}</h4>
                             <p>Цена: {{ $item['cost'] }}р.</p>
                         </div>
                     </a>
@@ -44,7 +44,7 @@
                     <a href="/tire/{{$item['id']}}">
                         <img src="{{ $item['img'] }}" alt="фото">
                         <div class="caption">
-                            <h4>{{ $item['title'] }}</h4>
+                            <h4 class="first-up">{{ $item['title'] }}</h4>
                             <p>Цена: {{ $item['cost'] }}р.</p>
                         </div>
                     </a>

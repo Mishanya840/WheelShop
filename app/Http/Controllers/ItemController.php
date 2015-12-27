@@ -10,10 +10,10 @@ use Illuminate\Http\Request;
 
 class ItemController extends Controller {
 
-
-	public function showItem($type, $id, Request $request)
+	public function getItem($type, $id)
 	{
-		switch($type){
+		$item = null;
+		switch ($type) {
 			case 'disk':
 				$item = Disk::findOrFail($id);
 				break;
@@ -26,6 +26,13 @@ class ItemController extends Controller {
 			default:
 				abort(503, 'Erroe type on rout');
 		}
+		return $item;
+	}
+
+
+	public function showItem($type, $id, Request $request)
+	{
+		$item = $this->getItem($type,$id);
 		return view('pages.item', ['item' => $item, 'type' => $type]);
 
 	}

@@ -20,86 +20,86 @@ class ShoppingCartController extends Controller {
 		$data = $request->all();
 		if($request->ajax())
 		{
-			$response = new Response();
-			$response = Response('goods');
-			$response->withCookie(cookie()->forever('id', 'value'));
-			$request = $request->cookie('id');
-			return [$response, $request];
+			if($data['count']>0) {
+				if ($request->hasCookie('goods')) {
+					$request_array = json_decode($request->cookie('goods'), 2);
+					$coincidence = false;
+					foreach ($request_array as &$product) {
+						if ($product['id'] == $data['id'] && $product['type'] == $data['type']) {
+							$product['count'] += $data['count'];//если такой товар уже есть, просто увеличить кол-во;
+							$coincidence = true;
+							break;
+						}
+					}
+					if ($coincidence == false) {
+						array_push($request_array, array('id' => $data['id'], 'type' => $data['type'], 'count' => (int)$data['count']));
+					}
+					$cookie_json = json_encode($request_array);
+					$msg = 'true';
+				} else {
+					$cookie_json = json_encode(array(
+							array('id' => $data['id'], 'type' => $data['type'], 'count' => (int)$data['count'])
+					));
+					//$cookie_json = [{"id":"38","type":"wheel","count":4},{"id":"38","type":"wheel","count":6},{"id":"2","type":"tire","count":8},{"id":"2","type":"tire","count":2},{"id":"2","type":"disk","count":5},{"id":"2","type":"disk","count":56},{"id":"7","type":"disk","count":4},{"id":"1","type":"tire","count":1},{"id":"29","type":"wheel","count":9},{"id":"38","type":"wheel","count":6}];
+					$msg = 'false';
+				}
+
+				$response = Response('goods');
+				$response->withCookie(cookie()->forever('goods', $cookie_json));
+			}
 		}
+		return $response;
+	}
+	public function countCartAjax(Request $request)
+	{
+		if($request->ajax()) {
+			$result = $this->countCart($request);
+		}
+		return $result;
+	}
+
+	public function countCart(Request $request)
+	{
+		if( $request->hasCookie('goods') ){
+			$request_array = json_decode($request->cookie('goods'),2);
+			$result = count($request_array);
+		}else{
+			$result = 0;
+		}
+		return $result;
 	}
 
 	/**
-	 * Display a listing of the resource.
-	 *
-	 * @return Response
-	 */
-	public function index()
+	 * @param Request $request
+	 * @return \Illuminate\View\View
+     */
+	public function showCart(Request $request)
 	{
-		//
+
+		if( $request->hasCookie('goods') ){
+			$request_array = json_decode($request->cookie('goods'),2);
+			$data = ($request_array);//данные из Cookie
+
+			$item = new ItemController;
+			$result = [];
+			foreach($data as $value){
+				$item_data = $item->getItem($value['type'], $value['id'])->toArray();//данные из БД
+				$item_data['typeItem'] = $value['type'];
+				$item_data['count'] = $value['count'];
+				array_push($result,$item_data);
+			}
+
+		}else{
+			$data = 'Сookie отсутствует';
+		}
+
+
+
+		$totalCount = $this->countCart($request);
+		return view('pages.showCart',['data' => $result, 'totalCount' => $totalCount]);
 	}
 
-	/**
-	 * Show the form for creating a new resource.
-	 *
-	 * @return Response
-	 */
-	public function create()
-	{
-		//
-	}
 
-	/**
-	 * Store a newly created resource in storage.
-	 *
-	 * @return Response
-	 */
-	public function store()
-	{
-		//
-	}
 
-	/**
-	 * Display the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function show($id)
-	{
-		//
-	}
-
-	/**
-	 * Show the form for editing the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function edit($id)
-	{
-		//
-	}
-
-	/**
-	 * Update the specified resource in storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function update($id)
-	{
-		//
-	}
-
-	/**
-	 * Remove the specified resource from storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function destroy($id)
-	{
-		//
-	}
 
 }

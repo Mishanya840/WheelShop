@@ -13,7 +13,7 @@
                     <a href="/{{$type}}/{{$item['id']}}">
                         <img src="{{ $item['img'] }}" alt="фото">
                         <div class="caption">
-                            <h4>{{ $item['title'] }}</h4>
+                            <h4 class="first-up">{{ $item['title'] }}</h4>
                             <p>{{ $item['description'] }}</p>
                         </div>
                     </a>

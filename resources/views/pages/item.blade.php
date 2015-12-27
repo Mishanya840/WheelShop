@@ -7,20 +7,20 @@
                 <img class="col-md-12" src="{{$item['img']}}">
             </div>
             <div class="col-md-4 right-part">
-                <h3 class="text-left item-title">{{$item['title']}}</h3>
+                <h3 class="text-left first-up item-title">{{$item['title']}}</h3>
                 <h3 class="item-cost">RUB {{$item['cost']}}</h3>
                 <h6 class="count">Количество</h6>
-                <div class="input-group col-md-3">
-                    <input type="text" class="form-control" name="count"><?//TODO count<=$item['count']?>
+                <div class="input-group col-md-4">
+                    <input type="number" class="form-control" name="count" value="1"><?//TODO count<=$item['count']?>
                     <span class="input-group-addon">шт.</span>
                 </div>
                 <div class="btn-group">
-                <button type="button" data-id="{{$item['id']}}" id="addToCart" class="btn btn-default col-md-12" >ДОБАВИТЬ В КОРЗИНУ</button>
+                <button type="button" data-id="{{ $item['id'] }}" data-type="{{ $type }}" id="addToCart" class="btn btn-default col-md-12" >ДОБАВИТЬ В КОРЗИНУ</button>
                 </div>
                 <div class="panel panel-default">
                     <div class="panel-heading">Основная информация</div>
                     <div class="panel-body">
-                        <p>{{$item['description']}}</p>
+                        <p class="first-up">{{$item['description']}}</p>
 
                     <table class="table col-md-12 table-condensed table-bordered ">
                         <tr class="tr-title active text-center">
@@ -41,12 +41,12 @@
                             <td>{{$item['width']}}</td>
                             @unless($type == 'disk')
                                 <td>{{$item['profile']}}</td>
-                                <td>{{$item['winter'] ? '✔' : 'нет'}}</td>
+                                <td>{{$item['winter'] ? '✔' : 'Нет'}}</td>
                             @endunless
                             @if($type == 'disk')
                                 <td>{{$item['PCD']}}</td>
                                 <td>{{$item['ET']}}</td>
-                                <td>{{$item['type']}}</td>
+                                <td class="first-up">{{$item['type']}}</td>
                             @endunless
                         </tr>
                         @if($type == 'wheel')
@@ -58,7 +58,7 @@
                         <tr>
                             <td>{{$item['PCD']}}</td>
                             <td>{{$item['ET']}}</td>
-                            <td>{{$item['type']}}</td>
+                            <td class="first-up">{{$item['type']}}</td>
                         </tr>
                         @endif
                     </table>
@@ -72,20 +72,26 @@
             $('#addToCart').click(function () {
                 var id;
                 var count;
+                var type;
                 count = $('input[name="count"]').val();
+                //TODO сделать по умолчанию кольчество 1. не давать ввести менше 1го.
                 id = $('#addToCart').attr('data-id');
-                button = $(this); // объект кнопка
+                type = $('#addToCart').attr('data-type');
+                console.log(type);
                 $.ajax({
                     url: '/addToCart',
                     type: "POST",
                     data: { id: id,
+                            type: type,
                             count: count
                     },
                     headers: {
                         'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
                     },
                     success: function ($data) {
-                        console.log($data)
+                        repaintBadgeCart();
+                        console.log('-repaintedBadgeCart')
+                        //document.write($data);
                     },
                     error: function (msg) {
                         document.write(msg['responseText']);

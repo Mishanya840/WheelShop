@@ -74,6 +74,9 @@ body {
 .shopping-cart{
   height: 30px;
 }
+.first-up:first-letter{
+  text-transform: uppercase;
+}
 .slider{
   margin: 0 50px;
   text-align: center;

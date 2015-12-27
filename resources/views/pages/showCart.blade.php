@@ -18,6 +18,16 @@
                     <td>Количество</td>
                     <td>Итого</td>
                 </tr>
+                @foreach($data as $value)
+                <tr>
+                    <td class="col-md-2"><img class="col-md-12" src="{{ $value['img'] }}" ></td>
+                    <td class="first-up">
+                        <h4 >{{ $value['title'] }}</h4>
+                    </td>
+                    <td><input class="col-md-2" type="number" value="{{ $value['count'] }}"></td>
+                    <td>{{ $value['count']*$value['cost'] }}RUB</td>
+                </tr>
+                @endforeach
 
             </table>
         </div>

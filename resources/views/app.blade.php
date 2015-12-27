@@ -7,16 +7,19 @@
 	<script type="text/javascript" src="/lib/jquery-1.11.0.min.js"></script>
 	<script type="text/javascript" src="/lib/jquery-migrate-1.2.1.min.js"></script>
 	<script type="text/javascript" src="/slick/slick.min.js"></script>
+	<script type="text/javascript" src="/js/main.js"></script>
 	<script src="/lib/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/js/alertify.js"></script>
 {{--
 	<script src="{{asset("js/functions.js")}}"></script>
 --}}
 	<meta name="csrf-token" id="csrf-token" content="{{ csrf_token() }}">
 	<title>Laravel</title>
 
-	<link href="/css/app.css" rel="stylesheet">
+	<link href="/css/alertify.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="/slick/slick.css"/>
 	<link rel="stylesheet" type="text/css" href="/slick/slick-theme.css"/>
+	<link href="/css/app.css" rel="stylesheet">
 	<!-- Fonts -->
 	<link href='/lib/fontRoboto.css' rel='stylesheet' type='text/css'>
 </head>
@@ -35,9 +38,9 @@
 				<h4 class="header-text">Интернет-магазин колёс на ваш автомобиль</h4>
 			</div>
 			<div class="media-right ">
-				<a href="{{route('shoppingCart')}}">
+				<a href="{{route('showCart')}}">
 					<img src="/image/glyphicons-203-shopping-cart.png" alt="..." class="shopping-cart">
-					<span class="badge">4</span>
+					<span id="badgeCart" class="badge">4</span>
 				</a>
 			</div>
 		</div>
@@ -46,7 +49,7 @@
 		<nav class="navbar mynavbar navbar-default" role="navigation">
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
-					<li ><a href="/">Галавная</a></li>
+					<li ><a href="/">Главная</a></li>
 					<li><a href="/wheel">Колёса</a></li>
 					<li><a href="/tire">Шины</a></li>
 					<li><a href="/disk">Диски</a></li>
@@ -68,10 +71,10 @@
 			<div class="col-md-4">
 				<h3 class="text-center">Обслуживание клиентов</h3>
 				<div class="list-group">
-					<a class="list-group-item">Контакты</a>
-					<a class="list-group-item">Доставка</a>
-					<a class="list-group-item">Возврат</a>
-					<a class="list-group-item">Оплата и гарантия</a>
+					<a class="list-group-item" href="/contacts">Контакты</a>
+					<a class="list-group-item" href="/delivery">Доставка</a>
+					<a class="list-group-item" href="/return">Возврат</a>
+					<a class="list-group-item" href="/warranty">Оплата и гарантия</a>
 				</div>
 			</div>
 			<div class="col-md-4">
@@ -83,6 +86,14 @@
 			</div>
 		</div>
 	</div>
+	<script>
+		$(document).ready(function() {
+			repaintBadgeCart();
+			alertify.error('message');
+
+
+		});
+	</script>
 
 
 
