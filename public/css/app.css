@@ -88,6 +88,10 @@ body {
   text-decoration: none;
   color: black;
 }
+.not-a, .not-a:hover{
+  text-decoration: none;
+  color: black;
+}
 .slider-item h4{
   margin: 5px 0;
 }

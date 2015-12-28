@@ -2,13 +2,10 @@
 
 
     function repaintBadgeCart() {
-        var count;
-        console.log(count);
         $.ajax({
             url: '/countCart',
             type: "POST",
             data: {
-                count: count
             },
             headers: {
                 'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
@@ -21,4 +18,5 @@
                 document.write(msg['responseText']);
             }
         });
+
     };

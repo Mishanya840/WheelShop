@@ -34,7 +34,7 @@
                                 <td>PCD</td>
                                 <td>Вылет</td>
                                 <td>Тип</td>
-                            @endunless
+                            @endif
                         </tr>
                         <tr class="text-center">
                             <td>{{$item['diametr']}}</td>
@@ -47,7 +47,7 @@
                                 <td>{{$item['PCD']}}</td>
                                 <td>{{$item['ET']}}</td>
                                 <td class="first-up">{{$item['type']}}</td>
-                            @endunless
+                            @endif
                         </tr>
                         @if($type == 'wheel')
                         <tr class="tr-title active">
@@ -74,29 +74,32 @@
                 var count;
                 var type;
                 count = $('input[name="count"]').val();
-                //TODO сделать по умолчанию кольчество 1. не давать ввести менше 1го.
                 id = $('#addToCart').attr('data-id');
                 type = $('#addToCart').attr('data-type');
-                console.log(type);
-                $.ajax({
-                    url: '/addToCart',
-                    type: "POST",
-                    data: { id: id,
+                if(count > 0) {
+                    $.ajax({
+                        url: '/addToCart',
+                        type: "POST",
+                        data: {
+                            id: id,
                             type: type,
                             count: count
-                    },
-                    headers: {
-                        'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
-                    },
-                    success: function ($data) {
-                        repaintBadgeCart();
-                        console.log('-repaintedBadgeCart')
-                        //document.write($data);
-                    },
-                    error: function (msg) {
-                        document.write(msg['responseText']);
-                    }
-                });
+                        },
+                        headers: {
+                            'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+                        },
+                        success: function ($data) {
+                            repaintBadgeCart();
+                            console.log('-repaintedBadgeCart')
+                            //document.write($data);
+                        },
+                        error: function (msg) {
+                            document.write(msg['responseText']);
+                        }
+                    });
+                }else{
+                    alertify.error('Введите кол')
+                }
             });
         });
 

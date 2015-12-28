@@ -27,6 +27,14 @@
 
 
 	<div class="container header-logo-row">
+		<div class="log-panel panel panel-default">
+			<ul >
+				<li><a href="/login">Войти</a></li>
+				<li><a href="/registration">Регистрация</a></li>
+				<li><a href="/admin">Добавить товар</a></li>
+				<li><a href="/logout">Выйти</a></li>
+			</ul>
+		</div>
 		<div class="media">
 			<div class="media-left">
 				<a href="#">
@@ -40,7 +48,7 @@
 			<div class="media-right ">
 				<a href="{{route('showCart')}}">
 					<img src="/image/glyphicons-203-shopping-cart.png" alt="..." class="shopping-cart">
-					<span id="badgeCart" class="badge">4</span>
+					<span id="badgeCart" class="badge">0</span>
 				</a>
 			</div>
 		</div>
@@ -89,9 +97,6 @@
 	<script>
 		$(document).ready(function() {
 			repaintBadgeCart();
-			alertify.error('message');
-
-
 		});
 	</script>
 

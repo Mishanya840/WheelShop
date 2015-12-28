@@ -19,7 +19,7 @@ class CreateTiresTable extends Migration {
 			$table->string('img', 250);
 			$table->text('description', 400);
 			$table->mediumInteger('cost');
-			$table->tinyInteger('cunt');
+			$table->tinyInteger('count');
 			$table->tinyInteger('diametr');
 			$table->smallInteger('width');
 			$table->float('profile');

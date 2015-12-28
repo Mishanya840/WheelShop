@@ -21,8 +21,8 @@ class DatabaseSeeder extends Seeder {
 		$this->call('InfoPageTableSeeder');
 		for($i=0; $i < 9; $i++){
 			$this->call('WheelTableSeeder');
-			/*$this->call('DiskTableSeeder');
-			$this->call('TireTableSeeder');*/
+			$this->call('DiskTableSeeder');
+			$this->call('TireTableSeeder');
 		}
 	}
 
@@ -38,7 +38,7 @@ class WheelTableSeeder extends Seeder
 		'img' => 'http://presentation/image/logo.png',
 		'description' => 'Колёса новые. В отличном состоянии. Хорошие материалы и шипы. В наличии 4 штуки',
 		'cost' => '5000',
-		'cunt' => '4',
+		'count' => '4',
 		'diametr' => '16',
 		'width' => '55',
 		'profile' => '15',
@@ -60,7 +60,7 @@ class DiskTableSeeder extends Seeder
 				'img' => 'http://presentation/image/momo.jpg',
 				'description' => 'Диски новые. В отличном состоянии. Хорошие материалы. В наличии 4 штуки',
 				'cost' => '6000',
-				'cunt' => '4',
+				'count' => '4',
 				'diametr' => '16',
 				'width' => '55',
 				'PCD' => '5*100',
@@ -80,7 +80,7 @@ class TireTableSeeder extends Seeder
 				'img' => 'http://presentation/image/kama.jpg',
 				'description' => 'Резина новая. В отличном состоянии. Хорошие материалы и шипы. В наличии 4 штуки',
 				'cost' => '5000',
-				'cunt' => '4',
+				'count' => '4',
 				'diametr' => '16',
 				'width' => '55',
 				'profile' => '15',
