@@ -19,7 +19,7 @@
     <div class="container log-panel panel panel-default">
         <ul>
             <li><a href="/">Главная</a></li>
-            <li><a href="/logout">Выйти</a></li>
+            <li><a href="/auth/logout">Выйти</a></li>
         </ul>
     </div>
 

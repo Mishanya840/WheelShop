@@ -4,6 +4,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Session;
@@ -75,7 +76,6 @@ class ShoppingCartController extends Controller {
      */
 	public function showCart(Request $request)
 	{
-
 		if( $request->hasCookie('goods') ){
 			$request_array = json_decode($request->cookie('goods'),2);
 			$data = ($request_array);//данные из Cookie
@@ -97,6 +97,31 @@ class ShoppingCartController extends Controller {
 
 		$totalCount = $this->countCart($request);
 		return view('pages.showCart',['data' => $result, 'totalCount' => $totalCount]);
+	}
+
+	public function deleteItemOnCart(Request $request)
+	{
+		$data = $request->all();
+		if($request->ajax())
+		{
+				if ($request->hasCookie('goods')) {
+					$request_array = json_decode($request->cookie('goods'), 2);
+
+					foreach ($request_array as &$product) {
+						if ($product['id'] == $data['id'] && $product['type'] == $data['type']) {
+							unset($product['id']);
+							return $request_array;
+							break;
+						}
+					}
+
+					$cookie_json = json_encode($request_array);
+				}
+				$response = Response('goods');
+				$response->withCookie(cookie()->forever('goods', $cookie_json));
+
+		}
+		return $response;
 	}
 
 

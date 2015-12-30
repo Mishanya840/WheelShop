@@ -29,10 +29,14 @@
 	<div class="container header-logo-row">
 		<div class="log-panel panel panel-default">
 			<ul >
-				<li><a href="/login">Войти</a></li>
-				<li><a href="/registration">Регистрация</a></li>
+				@if(\Illuminate\Support\Facades\Auth::guest())
+				<li><a href="/auth/login">Войти</a></li>
+				<li><a href="/auth/register">Регистрация</a></li>
+				@endif
+				@if(\Illuminate\Support\Facades\Auth::check())
 				<li><a href="/admin">Добавить товар</a></li>
-				<li><a href="/logout">Выйти</a></li>
+				<li><a href="/auth/logout">Выйти</a></li>
+				@endif
 			</ul>
 		</div>
 		<div class="media">
@@ -61,7 +65,6 @@
 					<li><a href="/wheel">Колёса</a></li>
 					<li><a href="/tire">Шины</a></li>
 					<li><a href="/disk">Диски</a></li>
-					<li><a href="/other">Прочее</a></li>
 				</ul>
 				<p class="navbar-text navbar-right">Звоните : 8(981)80-97-883</p>
 			</div>

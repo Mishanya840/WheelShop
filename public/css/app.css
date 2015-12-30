@@ -92,6 +92,9 @@ body {
   text-decoration: none;
   color: black;
 }
+.table input{
+  width: 70px;
+}
 .slider-item h4{
   margin: 5px 0;
 }

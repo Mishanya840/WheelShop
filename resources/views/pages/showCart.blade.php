@@ -42,7 +42,7 @@
                                 Вылет: {{$value['ET']}}<br>
                                 Тип: <span class="first-up">{{$value['type']}}</span><br>
                             @endif
-
+                            <a class="deleteItemOnCart" data-id="{{$value['id']}}" data-type="{{ $value['typeItem'] }}">Удалить из корзины</a>
                         </p>
                     </td>
                     <td>
@@ -68,4 +68,30 @@
         </div>
 
     </div>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('.deleteItemOnCart').click(function(){
+                var id = $(this).attr('data-id');
+                var type = $(this).attr('data-type');
+                $.ajax({
+                    url: '/deleteItemOnCart',
+                    type: "POST",
+                    data: {
+                        id: id,
+                        type: type,
+                    },
+                    headers: {
+                        'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    success: function ($data) {
+                        repaintBadgeCart();
+                        document.write($data);
+                    },
+                    error: function (msg) {
+                        document.write(msg['responseText']);
+                    }
+                });
+            });
+        });
+    </script>
 @endsection
