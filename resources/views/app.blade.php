@@ -27,14 +27,16 @@
 
 
 	<div class="container header-logo-row">
-		<div class="log-panel panel panel-default">
+		<div class="log-panel panel panel-default auth-panel">
 			<ul >
 				@if(\Illuminate\Support\Facades\Auth::guest())
 				<li><a href="/auth/login">Войти</a></li>
 				<li><a href="/auth/register">Регистрация</a></li>
 				@endif
 				@if(\Illuminate\Support\Facades\Auth::check())
+					@if(\Illuminate\Support\Facades\Auth::user()['admin'])
 				<li><a href="/admin">Добавить товар</a></li>
+					@endif
 				<li><a href="/auth/logout">Выйти</a></li>
 				@endif
 			</ul>
@@ -49,12 +51,14 @@
 				<h3 class="media-heading">ШиноМаг</h3>
 				<h4 class="header-text">Интернет-магазин колёс на ваш автомобиль</h4>
 			</div>
+			@unless(\Illuminate\Support\Facades\Auth::check())
 			<div class="media-right ">
 				<a href="{{route('showCart')}}">
 					<img src="/image/glyphicons-203-shopping-cart.png" alt="..." class="shopping-cart">
 					<span id="badgeCart" class="badge">0</span>
 				</a>
 			</div>
+			@endunless
 		</div>
 	</div>
 	<div class="container">

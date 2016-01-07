@@ -114,6 +114,35 @@ body {
 .right-part table td{
 
 }
+.panel-body textarea{
+  width: 100%;
+}
+.empty-cart{
+  text-align: center;
+  line-height: 300px;
+  font-size: 40px;
+  color: grey;
+}
+.add-body{
+  margin-bottom: 50px;
+}
+.add-body input{
+  width: 250px;
+}
+.auth-panel li{
+  margin-right: 25px;
+  display: inline-block;
+}
+.auth-panel ul{
+  position: absolute;
+  right: 0;
+  margin: 10px;
+}
+.auth-panel{
+  height: 45px;
+  position: relative;
+}
+
 
 
 article,

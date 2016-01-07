@@ -1,22 +1,22 @@
 @extends('/admin/app')
 
 @section('content')
-    <div class="container">
+    <div class="container add-body">
         <div class="addItem">
             <div class="page-header text-center">
                 <h3>Добавить новый товар</h3>
             </div>
             <form enctype="multipart/form-data" action="/admin/addItem" method="POST">
-                <table class="table">
+                <table class="table ">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <tr>
                         <td><h5>Тип</h5></td>
                         <td>
                             <select id="typeItem" required name="typeItem">
                                 <option>Выберите</option>
-                                <option value="wheels">Колёсо</option>
-                                <option value="tires">Шина</option>
-                                <option value="disks">Диск</option>
+                                <option value="wheel">Колёсо</option>
+                                <option value="tire">Шина</option>
+                                <option value="disk">Диск</option>
                             </select>
                         </td>
                     </tr>
@@ -72,16 +72,7 @@
                 <button type="submit" name="addItem" id="addItemBtn">Добавить</button>
             </form>
         </div>
-        <div class="changeItem">
-            <div class="page-header text-center">
-                <h3>Выбрать и изменить товар</h3>
-            </div>
-            <select id="typeChangeItem" required>
-                <option value="wheels">Колёса</option>
-                <option value="tires">Шины</option>
-                <option value="disks">Диски</option>
-            </select>
-        </div>
+
     </div>
     <p id="msg" style="display: none" data-msg="{{$msg or 0}}"></p>
     <script type="text/javascript">

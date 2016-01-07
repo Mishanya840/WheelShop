@@ -2,9 +2,10 @@
 
 @section('content')
     <div class="container">
+    @if($issetCookie)
        <div class="cart-relative-div">
            <div class="cart-left-div">
-               <h4>Моя корзина({{$totalCount or '0'}})</h4>
+               <h4>Моя корзина({{$totalCount or ''}})</h4>
            </div>
            <div class="cart-right-div">
                 <button class="btn btn-warning"><h4>Оформить заказ</h4></button>
@@ -66,11 +67,21 @@
                 <button class="btn btn-warning"><h4>Оформить заказ</h4></button>
             </div>
         </div>
-
+    @else
+        <div class="cart-relative-div">
+            <div class="cart-left-div">
+                <h4>Моя корзина(0)</h4>
+            </div>
+            <div class="cart-right-div">
+                <h4>В вашей корзине нет товаров</h4>
+            </div>
+        </div>
+        <div class="empty-cart">ПУСТО</div>
+    @endif
     </div>
     <script type="text/javascript">
         $(document).ready(function() {
-            $('.deleteItemOnCart').click(function(){
+            $('.222222222222deleteItemOnCart').click(function(){
                 var id = $(this).attr('data-id');
                 var type = $(this).attr('data-type');
                 $.ajax({
@@ -85,7 +96,6 @@
                     },
                     success: function ($data) {
                         repaintBadgeCart();
-                        document.write($data);
                     },
                     error: function (msg) {
                         document.write(msg['responseText']);

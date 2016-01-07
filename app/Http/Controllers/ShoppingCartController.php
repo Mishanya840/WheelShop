@@ -46,7 +46,7 @@ class ShoppingCartController extends Controller {
 				}
 
 				$response = Response('goods');
-				$response->withCookie(cookie()->forever('goods', $cookie_json));
+				$response->withCookie(Cookie::make('goods', $cookie_json));
 			}
 		}
 		return $response;
@@ -77,6 +77,7 @@ class ShoppingCartController extends Controller {
 	public function showCart(Request $request)
 	{
 		if( $request->hasCookie('goods') ){
+			$issetCookie = true;
 			$request_array = json_decode($request->cookie('goods'),2);
 			$data = ($request_array);//данные из Cookie
 
@@ -88,15 +89,17 @@ class ShoppingCartController extends Controller {
 				$item_data['count'] = $value['count'];
 				array_push($result,$item_data);
 			}
-
+			$totalCount = $this->countCart($request);
 		}else{
-			$data = 'Сookie отсутствует';
+			$issetCookie = false;
+			$result = null;
+			$totalCount = 0;
 		}
 
 
 
-		$totalCount = $this->countCart($request);
-		return view('pages.showCart',['data' => $result, 'totalCount' => $totalCount]);
+
+		return view('pages.showCart',[ 'issetCookie' => $issetCookie, 'data' => $result, 'totalCount' => $totalCount]);
 	}
 
 	public function deleteItemOnCart(Request $request)
@@ -109,7 +112,7 @@ class ShoppingCartController extends Controller {
 
 					foreach ($request_array as &$product) {
 						if ($product['id'] == $data['id'] && $product['type'] == $data['type']) {
-							unset($product['id']);
+							unset($product);
 							return $request_array;
 							break;
 						}
@@ -118,7 +121,7 @@ class ShoppingCartController extends Controller {
 					$cookie_json = json_encode($request_array);
 				}
 				$response = Response('goods');
-				$response->withCookie(cookie()->forever('goods', $cookie_json));
+				$response->withCookie(Cookie::make('goods', $cookie_json));
 
 		}
 		return $response;

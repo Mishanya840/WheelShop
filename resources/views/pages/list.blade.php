@@ -8,9 +8,9 @@
         <div class="row">
 
         @foreach($list as $item)
-            <div class="col-md-3">
+            <div class="col-md-3 col-sm-4 col-xs-6">
                 <div class="thumbnail list-item">
-                    <a href="/{{$type}}/{{$item['id']}}">
+                    <a href="admin/{{$type}}/{{$item['id']}}">
                         <img src="{{ $item['img'] }}" alt="фото">
                         <div class="caption">
                             <h4 class="first-up">{{ $item['title'] }}</h4>

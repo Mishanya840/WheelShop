@@ -40,7 +40,7 @@ class ItemController extends Controller {
 	public function adminShowItem($type, $id, Request $request)
 	{
 		$item = $this->getItem($type,$id);
-		return view('admin.item', ['item' => $item, 'type' => $type]);
+		return view('admin.item', ['item' => $item, 'type' => $type, 'id' => $id]);
 
 	}
 }

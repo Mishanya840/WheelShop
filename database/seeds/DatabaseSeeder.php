@@ -4,6 +4,7 @@ use App\Models\InfoPage;
 use App\Models\Wheel;
 use App\Models\Tire;
 use App\Models\Disk;
+use App\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
 
@@ -17,7 +18,7 @@ class DatabaseSeeder extends Seeder {
 	public function run()
 	{
 		Model::unguard();
-
+		$this->call('UserTableSeeder');
 		$this->call('InfoPageTableSeeder');
 		for($i=0; $i < 9; $i++){
 			$this->call('WheelTableSeeder');
@@ -26,6 +27,23 @@ class DatabaseSeeder extends Seeder {
 		}
 	}
 
+}
+class UserTableSeeder extends Seeder
+{
+	/*
+	 * Удаляет все записи таблицы Users
+	 * и создает администратора.
+	 * */
+	public function run()
+	{
+		DB::table('users')->delete();
+		User::create([
+				'name' => 'admin',
+				'email' => 'admin@admin.com',
+				'password' => '123456',
+				'admin' => '1'
+		]);
+	}
 }
 
 class WheelTableSeeder extends Seeder
@@ -54,7 +72,7 @@ class DiskTableSeeder extends Seeder
 {
 	public function run()
 	{
-		//DB::table('wheels')->delete();
+		//DB::table('disks')->delete();
 		Disk::create([
 				'title' => 'MOMO',
 				'img' => 'http://presentation/image/momo.jpg',
@@ -74,7 +92,7 @@ class TireTableSeeder extends Seeder
 {
 	public function run()
 	{
-		//DB::table('wheels')->delete();
+		//DB::table('tires')->delete();
 		Tire::create([
 				'title' => 'KAMA',
 				'img' => 'http://presentation/image/kama.jpg',
