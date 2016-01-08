@@ -2,43 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ddde7e05-a79c-485c-b401-ab7152c28800" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Middleware/RedirectAdmin.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/image/disks/10_4TwLryzdU2A.jpg" afterPath="$PROJECT_DIR$/public/image/disk/10_4TwLryzdU2A.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/image/tires/13_Ez-ZTEebq5Y.jpg" afterPath="$PROJECT_DIR$/public/image/tire/13_Ez-ZTEebq5Y.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/image/tires/14_Ez-ZTEebq5Y.jpg" afterPath="$PROJECT_DIR$/public/image/tire/14_Ez-ZTEebq5Y.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/image/tires/15_Ez-ZTEebq5Y.jpg" afterPath="$PROJECT_DIR$/public/image/tire/15_Ez-ZTEebq5Y.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/image/tires/16_Ez-ZTEebq5Y.jpg" afterPath="$PROJECT_DIR$/public/image/tire/16_Ez-ZTEebq5Y.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/image/tires/17_Ez-ZTEebq5Y.jpg" afterPath="$PROJECT_DIR$/public/image/tire/17_Ez-ZTEebq5Y.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/image/tires/_1280px-Linear_regression.png" afterPath="$PROJECT_DIR$/public/image/tire/_1280px-Linear_regression.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/image/tires/_4TwLryzdU2A.jpg" afterPath="$PROJECT_DIR$/public/image/tire/_4TwLryzdU2A.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/image/tires/_Ez-ZTEebq5Y.jpg" afterPath="$PROJECT_DIR$/public/image/tire/_Ez-ZTEebq5Y.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/image/tires/_HHJoKIwmt_4.jpg" afterPath="$PROJECT_DIR$/public/image/tire/_HHJoKIwmt_4.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/image/tires/_qwmqmT2yhxo.jpg" afterPath="$PROJECT_DIR$/public/image/tire/_qwmqmT2yhxo.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/image/wheels/13_4TwLryzdU2A.jpg" afterPath="$PROJECT_DIR$/public/image/wheel/13_4TwLryzdU2A.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/image/wheels/21_qwmqmT2yhxo.jpg" afterPath="$PROJECT_DIR$/public/image/wheel/21_qwmqmT2yhxo.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/image/wheels/22_qwmqmT2yhxo.jpg" afterPath="$PROJECT_DIR$/public/image/wheel/22_qwmqmT2yhxo.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/image/wheels/23_qwmqmT2yhxo.jpg" afterPath="$PROJECT_DIR$/public/image/wheel/23_qwmqmT2yhxo.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/image/wheels/24_qwmqmT2yhxo.jpg" afterPath="$PROJECT_DIR$/public/image/wheel/24_qwmqmT2yhxo.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/image/wheels/25_qwmqmT2yhxo.jpg" afterPath="$PROJECT_DIR$/public/image/wheel/25_qwmqmT2yhxo.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/image/wheels/26_qwmqmT2yhxo.jpg" afterPath="$PROJECT_DIR$/public/image/wheel/26_qwmqmT2yhxo.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/image/wheels/_1280px-Linear_regression.png" afterPath="$PROJECT_DIR$/public/image/wheel/_1280px-Linear_regression.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/image/wheels/_Ez-ZTEebq5Y.jpg" afterPath="$PROJECT_DIR$/public/image/wheel/_Ez-ZTEebq5Y.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/image/wheels/_HHJoKIwmt_4.jpg" afterPath="$PROJECT_DIR$/public/image/wheel/_HHJoKIwmt_4.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/ItemController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/ItemController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/ShoppingCartController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/ShoppingCartController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Kernel.php" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Middleware/isAdmin.php" afterPath="$PROJECT_DIR$/app/Http/Middleware/isAdmin.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/app.css" afterPath="$PROJECT_DIR$/public/css/app.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/app.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/app.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/item.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/item.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/main.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/main.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/app.blade.php" afterPath="$PROJECT_DIR$/resources/views/app.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/pages/list.blade.php" afterPath="$PROJECT_DIR$/resources/views/pages/list.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/pages/showCart.blade.php" afterPath="$PROJECT_DIR$/resources/views/pages/showCart.blade.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/~$README.md" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/readme.md" afterPath="$PROJECT_DIR$/readme.md" />
     </list>
     <ignored path="Presentation.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -707,8 +673,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="960" y="0" width="960" height="1032" extended-state="1" />
-    <editor active="true" />
+    <frame x="960" y="0" width="960" height="1032" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2648402" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
