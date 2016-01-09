@@ -22,9 +22,9 @@
                 </tr><?php //TODO при изменении количества изменять в куках?>
                 @foreach($data as $value)
                 <tr>
-                    <td class="col-md-2">
+                    <td class="col-md-2 col-sm-2">
                         <a class="not-a" href="/{{$value['typeItem']}}/{{$value['id']}}">
-                            <img class="col-md-12"  src="{{ $value['img'] }}" >
+                            <img class="col-md-12 col-sm-12"  src="{{ $value['img'] }}" >
                         </a>
                     </td>
                     <td >
@@ -48,7 +48,7 @@
                     </td>
                     <td>
                         <div class="input-lg">
-                            <input class="col-md-3" type="number" value="{{ $value['count'] }}">
+                            <input class="col-md-3 col-sm-3" type="number" value="{{ $value['count'] }}">
                         </div>
                     </td>
                     <td><h5>{{ $value['cost'] }} RUB</h5></td>
@@ -81,7 +81,7 @@
     </div>
     <script type="text/javascript">
         $(document).ready(function() {
-            $('.222222222222deleteItemOnCart').click(function(){
+            /*$('.deleteItemOnCart').click(function(){
                 var id = $(this).attr('data-id');
                 var type = $(this).attr('data-type');
                 $.ajax({
@@ -101,7 +101,7 @@
                         document.write(msg['responseText']);
                     }
                 });
-            });
+            });*/
         });
     </script>
 @endsection

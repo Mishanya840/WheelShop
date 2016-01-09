@@ -43,7 +43,7 @@
 		</div>
 		<div class="media">
 			<div class="media-left">
-				<a href="#">
+				<a href="{{route('main')}}">
 					<img src="/image/logo.png" alt="..." class="header-logo img-responsive img-rounded">
 				</a>
 			</div>
@@ -79,11 +79,11 @@
 
 	<div class="container">
 		<div class="row panel-footer">
-			<div class="col-md-4">
+			<div class="col-md-4  col-sm-4">
 				<h3>Свяжитесь с нами</h3>
 				<p>Город Кропоткин, улица Целинная 25.<br>119019. Россия. Тел +7(999)000-00-00<br>info@mail.ru</p>
 			</div>
-			<div class="col-md-4">
+			<div class="col-md-4  col-sm-4">
 				<h3 class="text-center">Обслуживание клиентов</h3>
 				<div class="list-group">
 					<a class="list-group-item" href="/contacts">Контакты</a>
@@ -92,7 +92,7 @@
 					<a class="list-group-item" href="/warranty">Оплата и гарантия</a>
 				</div>
 			</div>
-			<div class="col-md-4">
+			<div class="col-md-4  col-sm-4">
 				<h3 class="text-right">Мы принимаем</h3>
 				<div class="text-right">
 					<a><img src="/image/Visa.png"></a>

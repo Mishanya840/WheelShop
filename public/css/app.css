@@ -142,6 +142,13 @@ body {
   height: 45px;
   position: relative;
 }
+.list-item .title{
+  color: black;
+}
+.list-item .cost{
+  text-align: right;
+  font-weight: bold;
+}
 
 
 

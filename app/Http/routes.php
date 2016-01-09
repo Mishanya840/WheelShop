@@ -20,7 +20,7 @@ Route::post('/admin/changeItem',  ['uses'=>'AdminController@changeItem', 'middle
 Route::get('/{type}/{id}', ['uses' => 'ItemController@showItem', 'middleware' => 'RedirectAdmin'])->where(['id' => '[0-9]+', 'type' => '^(tire|wheel|disk)$']);;
 Route::get('/{title}', 'InfoPageController@index')->where(['title' => '^(contacts|delivery|return|warranty)$']);;
 
-Route::get('/admin/{type}/{id}', ['uses' => 'ItemController@adminShowItem'])->where(['id' => '[0-9]+', 'type' => '^(tire|wheel|disk)$']);;
+Route::get('/admin/{type}/{id}', ['middleware' => 'isAdmin', 'uses' => 'ItemController@adminShowItem'])->where(['id' => '[0-9]+', 'type' => '^(tire|wheel|disk)$']);;
 
 
 Route::controllers([
