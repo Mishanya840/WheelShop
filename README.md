@@ -26,4 +26,4 @@ DB_PASSWORD=
 Описание проекта
 ---------------------------
 Это курсовой проект, в котором я, используя laravel, bootstrap 3 и jquery, сделал интернет-магазин автомобильных дисков и шин. Сайт имеет корзину, авторизацию пользователей и страницу администратора с возможностями добавления, изменения и удаления.
-![Главная страница](https://github.com/Mishanya840/WheelShop/tree/master/public/image/readme/main.jpg "Главная страница")
+![Главная страница](https://github.com/Mishanya840/WheelShop/blob/master/public/image/readme/main.jpg)
