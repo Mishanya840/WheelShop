@@ -40,7 +40,7 @@ class UserTableSeeder extends Seeder
 		User::create([
 				'name' => 'admin',
 				'email' => 'admin@admin.com',
-				'password' => '123456',
+				'password' => md5(123456),//$2y$10$JE65fvHmXptA3.dv511v5eL/XaEDwHKe/NDqD19hPsRJltU.aEDJa
 				'admin' => '1'
 		]);
 	}
