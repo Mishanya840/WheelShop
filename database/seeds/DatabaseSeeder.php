@@ -37,12 +37,12 @@ class UserTableSeeder extends Seeder
 	public function run()
 	{
 		DB::table('users')->delete();
-		User::create([
+		User::create(array(
 				'name' => 'admin',
 				'email' => 'admin@admin.com',
-				'password' => md5(123456),//$2y$10$JE65fvHmXptA3.dv511v5eL/XaEDwHKe/NDqD19hPsRJltU.aEDJa
+				'password' => Hash::make('123456'),//$2y$10$JE65fvHmXptA3.dv511v5eL/XaEDwHKe/NDqD19hPsRJltU.aEDJa
 				'admin' => '1'
-		]);
+		));
 	}
 }
 
