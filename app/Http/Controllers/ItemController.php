@@ -7,6 +7,7 @@ use App\Models\Disk;
 use App\Models\Tire;
 use App\Models\Wheel;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 
 class ItemController extends Controller {
 
@@ -30,13 +31,26 @@ class ItemController extends Controller {
 	}
 
 
+	/**
+	 * @param $type
+	 * @param $id
+	 * @param Request $request
+	 * @return \Illuminate\View\View
+     */
 	public function showItem($type, $id, Request $request)
 	{
+
 		$item = $this->getItem($type,$id);
 		return view('pages.item', ['item' => $item, 'type' => $type]);
 
 	}
 
+	/**
+	 * @param $type
+	 * @param $id
+	 * @param Request $request
+	 * @return \Illuminate\View\View
+     */
 	public function adminShowItem($type, $id, Request $request)
 	{
 		$item = $this->getItem($type,$id);

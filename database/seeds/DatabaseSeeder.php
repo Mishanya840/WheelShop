@@ -53,7 +53,7 @@ class WheelTableSeeder extends Seeder
 		//DB::table('wheels')->delete();
 		Wheel::create([
 		'title' => 'pirelli',
-		'img' => 'http://presentation/image/logo.png',
+		'img' => '/image/logo.png',
 		'description' => 'Колёса новые. В отличном состоянии. Хорошие материалы и шипы. В наличии 4 штуки',
 		'cost' => '5000',
 		'count' => '4',
@@ -75,7 +75,7 @@ class DiskTableSeeder extends Seeder
 		//DB::table('disks')->delete();
 		Disk::create([
 				'title' => 'MOMO',
-				'img' => 'http://presentation/image/momo.jpg',
+				'img' => '/image/momo.jpg',
 				'description' => 'Диски новые. В отличном состоянии. Хорошие материалы. В наличии 4 штуки',
 				'cost' => '6000',
 				'count' => '4',
@@ -95,7 +95,7 @@ class TireTableSeeder extends Seeder
 		//DB::table('tires')->delete();
 		Tire::create([
 				'title' => 'KAMA',
-				'img' => 'http://presentation/image/kama.jpg',
+				'img' => '/image/kama.jpg',
 				'description' => 'Резина новая. В отличном состоянии. Хорошие материалы и шипы. В наличии 4 штуки',
 				'cost' => '5000',
 				'count' => '4',
