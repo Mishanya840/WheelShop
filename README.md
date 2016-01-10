@@ -13,7 +13,7 @@
     ServerName      "Wheelshop"
 </VirtualHost>
 ```
->4. git clone https://github.com/Mishanya840/WheelShop.git
+>4. *git clone* https://github.com/Mishanya840/WheelShop.git
 >5. Создать БД с названием "wheelshop", либо можете создать БД со своим названием и изменить параметры в файле .evn
 ```
 DB_HOST=localhost
