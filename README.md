@@ -3,13 +3,13 @@
 Быстрый старт
 ---------------------------
 (Я пользуюсь OpenServer, и все команды ввожу в консоле openserver'а)
->1.В папке с вашими проектами **git clone** https://github.com/Mishanya840/WheelShop.git
+>**1.**В папке с вашими проектами выполните команду **git clone** https://github.com/Mishanya840/WheelShop.git
 
->2.Установить [Composer](https://getcomposer.org/)
+>**2.**Установить [Composer](https://getcomposer.org/)
 
->3.Запустить установку библиотек через Composer командой ```composer install```
+>**3.**Запустить установку библиотек через Composer командой ```composer install```
 
->4.Настроить Apache_vhost (Можно проверить работу laravel. Должны увидить "Laravel")
+>**4.**Настроить Apache_vhost
 ```
 <VirtualHost *:80>
     DocumentRoot    "C:\OpenServer\domains\WheelShop\public"
@@ -18,11 +18,11 @@
 ```
 
 
->5.Создать БД файл .evn по примеру файла .env.example
+>**5.**Создать файл .evn по примеру файла .env.example и при необходимостри Базу Данных
 
->6.Создать таблицы командой ```php artisan migrate```
+>**6.**Создать таблицы командой ```php artisan migrate```
 
->7.Создать администратора ```php artisan db:seed --class=UserTableSeeder```(Так же можно наполнить сайт контентом для примера коммандой ```php artisan db:seed```)
+>**7.**Создать администратора ```php artisan db:seed --class=UserTableSeeder```(Так же можно наполнить сайт контентом для примера коммандой ```php artisan db:seed```)
 
 Описание проекта
 ---------------------------
