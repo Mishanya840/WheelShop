@@ -3,27 +3,23 @@
 Быстрый старт
 ---------------------------
 (Я пользуюсь OpenServer, и все команды ввожу в консоле openserver'а)
->1.Установить [Composer](https://getcomposer.org/)
+>1.В папке с вашими проектами **git clone** https://github.com/Mishanya840/WheelShop.git
 
->2.Установить Laravel через Composer. В папкке с вашими проектами ввести команду``` composer create-project laravel/laravel {Название папки} 5.0 --prefer-dist  ```
-(Подробнее https://laravel.ru/docs/v5/installation)
+>2.Установить [Composer](https://getcomposer.org/)
 
->3.Настроить Apache_vhost (Можно проверить работу laravel. Должны увидить "Laravel")
+>3.Запустить установку библиотек через Composer командой ```composer install```
+
+>4.Настроить Apache_vhost (Можно проверить работу laravel. Должны увидить "Laravel")
 ```
 <VirtualHost *:80>
     DocumentRoot    "C:\OpenServer\domains\WheelShop\public"
     ServerName      "Wheelshop"
 </VirtualHost>
 ```
->4.**git clone** https://github.com/Mishanya840/WheelShop.git
 
->5.Создать БД с названием "wheelshop", либо можете создать БД со своим названием и изменить параметры в файле .evn
-```
-DB_HOST=localhost
-DB_DATABASE=wheelshop
-DB_USERNAME=root
-DB_PASSWORD=
-```
+
+>5.Создать БД файл .evn по примеру файла .env.example
+
 >6.Создать таблицы командой ```php artisan migrate```
 
 >7.Создать администратора ```php artisan db:seed --class=UserTableSeeder```(Так же можно наполнить сайт контентом для примера коммандой ```php artisan db:seed```)
