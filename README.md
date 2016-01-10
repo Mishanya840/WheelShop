@@ -7,14 +7,14 @@
 >3. Установить Laravel через Composer``` composer global require "laravel/installer=~1.1"  ```
 (Подробнее https://laravel.ru/docs/v5/installation)
 >4. Настроить Apache_vhost
-```
+⋅⋅*```
 <VirtualHost *:80>
     DocumentRoot    "C:\OpenServer\domains\WheelShop\public"
     ServerName      "Wheelshop"
 </VirtualHost>
 ```
 >5. Создать БД с названием "wheelshop", либо создать своб бд и изменить параметры в файле .evn
-```
+⋅⋅*```
 DB_HOST=localhost
 DB_DATABASE=wheelshop
 DB_USERNAME=root
