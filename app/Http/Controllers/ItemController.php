@@ -41,6 +41,7 @@ class ItemController extends Controller {
 	{
 
 		$item = $this->getItem($type,$id);
+		$image = $item->images;//->where('type', $type);
 		return view('pages.item', ['item' => $item, 'type' => $type]);
 
 	}
@@ -54,6 +55,7 @@ class ItemController extends Controller {
 	public function adminShowItem($type, $id, Request $request)
 	{
 		$item = $this->getItem($type,$id);
+		$image = $item->images;
 		return view('admin.item', ['item' => $item, 'type' => $type, 'id' => $id]);
 
 	}

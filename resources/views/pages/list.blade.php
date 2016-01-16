@@ -6,12 +6,11 @@
             <h3>{{ $title }}</h3>
         </div>
         <div class="row">
-
         @foreach($list as $item)
             <div class="col-md-3 col-sm-4 col-xs-6">
                 <div class="thumbnail list-item">
                     <a href="{{$type}}/{{$item['id']}}">
-                        <img src="{{ $item['img'] }}" alt="фото">
+                        <img src="{{$item->toArray()['images'][0]['url'] or '#'}}" alt="фото">
                         <div class="caption">
                             <h4 class="first-up title">{{ $item['title'] }}</h4>
                             <p>{{ $item['description'] }}</p>

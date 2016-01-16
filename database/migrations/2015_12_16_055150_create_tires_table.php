@@ -16,7 +16,6 @@ class CreateTiresTable extends Migration {
 		{
 			$table->increments('id');
 			$table->string('title', 30)->index('title');
-			$table->string('img', 250);
 			$table->text('description', 400);
 			$table->mediumInteger('cost');
 			$table->tinyInteger('count');

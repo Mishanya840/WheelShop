@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-7 left-part">
-                <img class="col-md-12" src="{{$item['img']}}">
+                <img class="col-md-12" src="{{$item->toArray()['images'][0]['url'] or '#'}}">
             </div>
             <div class="col-md-4 right-part">
                 <h3 class="text-left first-up item-title">{{$item['title']}}</h3>

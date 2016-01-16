@@ -8,7 +8,7 @@
                 <input type="hidden" name="typeItem" value="{{ $type }}">
                 <input type="hidden" name="id" value="{{ $id or $item['id'] }}">
                 <div class="col-md-7 left-part">
-                    <img class="col-md-12" src="{{$item['img']}}">
+                    <img class="col-md-12" src="{{$item->toArray()['images'][0]['url'] or '#'}}">
                     <input type="file" id="image" name="image[]"  accept="image/jpeg,image/png">
                 </div>
 

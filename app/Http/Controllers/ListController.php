@@ -15,29 +15,51 @@ class ListController extends Controller {
 	 */
 	public function showWheel()
 	{
-		$list = Wheel::all()->toArray();
-		//dd($wheels);
+		$list = Wheel::all();
+		foreach($list as $item) {
+			$image = $item->images;
+		};
+		$list->toArray();
 		return view('pages.list', ['title' => 'Колёса в сборе', 'type' => 'wheel','list' => $list]);
 	}
 	public function showTire()
 	{
-		$list = Tire::all()->toArray();
-		//dd(Tire::findOrFail(2));
+		$list = Tire::all();
+		foreach($list as $item) {
+			$image = $item->images;
+		};
+		$list->toArray();
 		return view('pages.list', ['title' => 'Шины на ваш диск', 'type' => 'tire','list' => $list]);
 	}
 	public function showDisk()
 	{
-		$list = Disk::all()->toArray();
-
-		//dd(Disk::findOrFail(2));
+		$list = Disk::all();
+		foreach($list as $item) {
+			$image = $item->images;
+		};
+		$list->toArray();
 		return view('pages.list', ['title' => 'Диски на ваш вкус', 'type' => 'disk','list' => $list]);
 	}
 	public function showMain()
 	{
-		$listDisk = Disk::all()->toArray();
-		$listTire = Tire::all()->toArray();
-		$listWheel = Wheel::all()->toArray();
-		//dd($wheels);
+		$listDisk = Disk::all();
+		foreach($listDisk as $item) {
+			$imageDisk = $item->images;
+		};
+		$listDisk->toArray();
+
+		$listTire = Tire::all();
+		foreach($listTire as $item) {
+			$imageTire = $item->images;
+		};
+		$listTire->toArray();
+
+		$listWheel = Wheel::all();
+		foreach($listWheel as $item) {
+			$imageWheel = $item->images;
+		};
+		$listWheel->toArray();
+
 		return view('pages.main', [
 				'title' => [
 						'titleDisk' => 'Диски на ваш вкус',

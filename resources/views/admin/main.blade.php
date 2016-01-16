@@ -66,7 +66,7 @@
                     </tr>
                     <tr>
                         <td><h5>Фото</h5></td>
-                        <td><input type="file" name="image[]"  accept="image/jpeg,image/png"></td>
+                        <td><input type="file" name="image[]"  accept="image/jpeg,image/png" multiple></td>
                     </tr>
                 </table>
                 <button type="submit" name="addItem" id="addItemBtn">Добавить</button>
@@ -98,12 +98,12 @@
 
             //отображение полей, согласно выбранному типу
             $('#typeItem').change( function(){
-                if($("#typeItem :selected").val() == 'disks'){
+                if($("#typeItem :selected").val() == 'disk'){
                     $(".not-disk").hide()
                 }else{
                     $(".not-disk").show()
                 }
-                if($("#typeItem :selected").val() == 'tires'){
+                if($("#typeItem :selected").val() == 'tire'){
                     $(".not-tire").hide()
                 }else{
                     $(".not-tire").show()

@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Image;
 use App\Models\InfoPage;
 use App\Models\Wheel;
 use App\Models\Tire;
@@ -19,6 +20,7 @@ class DatabaseSeeder extends Seeder {
 	{
 		Model::unguard();
 		$this->call('UserTableSeeder');
+		$this->call('ImageTableSeeder');
 		$this->call('InfoPageTableSeeder');
 		for($i=0; $i < 9; $i++){
 			$this->call('WheelTableSeeder');
@@ -53,7 +55,6 @@ class WheelTableSeeder extends Seeder
 		//DB::table('wheels')->delete();
 		Wheel::create([
 		'title' => 'pirelli',
-		'img' => '/image/logo.png',
 		'description' => 'Колёса новые. В отличном состоянии. Хорошие материалы и шипы. В наличии 4 штуки',
 		'cost' => '5000',
 		'count' => '4',
@@ -75,7 +76,6 @@ class DiskTableSeeder extends Seeder
 		//DB::table('disks')->delete();
 		Disk::create([
 				'title' => 'MOMO',
-				'img' => '/image/momo.jpg',
 				'description' => 'Диски новые. В отличном состоянии. Хорошие материалы. В наличии 4 штуки',
 				'cost' => '6000',
 				'count' => '4',
@@ -85,6 +85,7 @@ class DiskTableSeeder extends Seeder
 				'ET' => '50',
 				'type' => 'Штампованные'
 		]);
+
 	}
 }
 
@@ -94,15 +95,30 @@ class TireTableSeeder extends Seeder
 	{
 		//DB::table('tires')->delete();
 		Tire::create([
-				'title' => 'KAMA',
-				'img' => '/image/kama.jpg',
-				'description' => 'Резина новая. В отличном состоянии. Хорошие материалы и шипы. В наличии 4 штуки',
-				'cost' => '5000',
-				'count' => '4',
-				'diametr' => '16',
-				'width' => '55',
-				'profile' => '15',
-				'winter' => true,
+			'title' => 'KAMA',
+			'description' => 'Резина новая. В отличном состоянии. Хорошие материалы и шипы. В наличии 4 штуки',
+			'cost' => '5000',
+			'count' => '4',
+			'diametr' => '16',
+			'width' => '55',
+			'profile' => '15',
+			'winter' => true,
+		]);
+	}
+}
+
+class ImageTableSeeder extends Seeder
+{
+	/**
+	 *
+     */
+	public function run()
+	{
+		//DB::table('images')->delete();
+		Image::create([
+			'item_id' => '1',
+			'type' => 'disk',
+			'url' => '/image/logo.png',
 		]);
 	}
 }

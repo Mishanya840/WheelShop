@@ -25,4 +25,9 @@ class Wheel extends Model {
      * @var array
      */
     //protected $hidden = ['password', 'remember_token'];
+
+    public function images()
+    {
+        return $this->hasMany('App\Models\Image', 'item_id')->where('type','wheel');
+    }
 }

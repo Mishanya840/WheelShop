@@ -2,6 +2,7 @@
 
 use App\Http\Requests;
 use App\Models\Disk;
+use App\Models\Image;
 use App\Models\Tire;
 use App\Models\Wheel;
 use Illuminate\Http\Request;
@@ -22,7 +23,6 @@ class AdminController extends Controller {
         try {
             $data = $request->all();
             $uploaddir = 'image/';
-            for ($i = 0; $i < count($_FILES['image']['name']); $i++) {
                 switch ($data['typeItem']) {
                     case 'wheel':
                         $model = new Wheel;
@@ -65,11 +65,15 @@ class AdminController extends Controller {
                         $model->save();
                         break;
                 }
+            for ($i = 0; $i < count($_FILES['image']['name']); $i++) {
                 $uploadfile = $uploaddir . $data['typeItem'] . "/" . ($model->id) . '_' . basename($_FILES['image']['name'][$i]);
                 move_uploaded_file($_FILES['image']['tmp_name'][$i], $uploadfile);
                 //добавить в БД
-                $model->img = 'http://presentation/' . $uploadfile;
-                $model->save();
+                $image = new Image;
+                $image->type = $data['typeItem'];
+                $image->item_id = $model->id;
+                $image->url ='/'. $uploadfile;
+                $image->save();
                 $msg = 'true';
             }
         }catch (Exception $e){
@@ -139,8 +143,11 @@ class AdminController extends Controller {
                     $uploadfile = $uploaddir . $data['typeItem'] . "/" . ($model->id) . '_' . basename($_FILES['image']['name'][$i]);
                     move_uploaded_file($_FILES['image']['tmp_name'][$i], $uploadfile);
                     //добавить в БД
-                    $model->img = 'http://presentation/' . $uploadfile;
-                    $model->save();
+                    $image = new Image;
+                    $image->type = $data['typeItem'];
+                    $image->item_id = $model->id;
+                    $image->url ='/'. $uploadfile;
+                    $image->save();
                     $msg = 'true';
                 }
             }

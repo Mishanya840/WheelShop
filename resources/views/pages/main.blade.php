@@ -10,7 +10,7 @@
             @foreach($list['listWheel'] as $item)
                 <div class="thumbnail slider-item">
                     <a href="/wheel/{{$item['id']}}">
-                        <img src="{{ $item['img'] }}" alt="фото">
+                        <img src="{{ $item['img'] or '#' }}" alt="фото">
                         <div class="caption">
                             <h4 class="first-up">{{ $item['title'] }}</h4>
                             <p>Цена: {{ $item['cost'] }}р.</p>
@@ -26,7 +26,7 @@
             @foreach($list['listDisk'] as $item)
                 <div class="thumbnail slider-item">
                     <a href="/disk/{{$item['id']}}">
-                        <img src="{{ $item['img'] }}" alt="фото">
+                        <img src="{{ $item['img'] or '#' }}" alt="фото">
                         <div class="caption">
                             <h4 class="first-up">{{ $item['title'] }}</h4>
                             <p>Цена: {{ $item['cost'] }}р.</p>
@@ -42,7 +42,7 @@
             @foreach($list['listTire'] as $item)
                 <div class="thumbnail slider-item">
                     <a href="/tire/{{$item['id']}}">
-                        <img src="{{ $item['img'] }}" alt="фото">
+                        <img src="{{ $item['img'] or '#' }}" alt="фото">
                         <div class="caption">
                             <h4 class="first-up">{{ $item['title'] }}</h4>
                             <p>Цена: {{ $item['cost'] }}р.</p>
