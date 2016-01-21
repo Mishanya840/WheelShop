@@ -3,10 +3,19 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <div class="col-md-7 left-part">
-                <img class="col-md-12" src="{{$item->toArray()['images'][0]['url'] or '#'}}">
+            <div class="col-md-6 left-part">
+                <div class="slider-for">
+                @foreach($item->toArray()['images'] as $image)
+                    <img class="col-md-12 slick-slide" src="{{$image['url'] or '#'}}">
+                @endforeach
+                </div>
+                <div class="slider-nav">
+                    @foreach($item->toArray()['images'] as $image)
+                        <img class="col-md-12 slick-slide" src="{{$image['url'] or '#'}}">
+                    @endforeach
+                </div>
             </div>
-            <div class="col-md-4 right-part">
+            <div class="col-md-offset-1 col-md-5 right-part">
                 <h3 class="text-left first-up item-title">{{$item['title']}}</h3>
                 <h3 class="item-cost">RUB {{$item['cost']}}</h3>
                 <h6 class="count">Количество</h6>
@@ -69,6 +78,21 @@
     </div>
     <script>
         $(document).ready(function() {
+            $('.slider-for').slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                fade: true,
+                asNavFor: '.slider-nav'
+            });
+            $('.slider-nav').slick({
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                arrows: false,
+                asNavFor: '.slider-for',
+                centerMode: true,
+                focusOnSelect: true,
+                lazyLoad: 'ondemand',
+            });
             $('#addToCart').click(function () {
                 var id;
                 var count;

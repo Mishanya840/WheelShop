@@ -24,7 +24,7 @@
                 <tr>
                     <td class="col-md-2 col-sm-2">
                         <a class="not-a" href="/{{$value['typeItem']}}/{{$value['id']}}">
-                            <img class="col-md-12 col-sm-12"  src="{{ $value['img'] }}" >
+                            <img class="col-md-12 col-sm-12"  src="{{$value['images'][0]['url'] or '#'}}" >
                         </a>
                     </td>
                     <td >
@@ -48,11 +48,11 @@
                     </td>
                     <td>
                         <div class="input-lg">
-                            <input class="col-md-3 col-sm-3" type="number" value="{{ $value['count'] }}">
+                            <input class="col-md-3 col-sm-3 input_count" id="{{$value['id']}}" type="number" value="{{ $value['count'] }}">
                         </div>
                     </td>
-                    <td><h5>{{ $value['cost'] }} RUB</h5></td>
-                    <td><h4>{{ $value['count']*$value['cost'] }} RUB</h4></td>
+                    <td><h5 id="cost_{{$value['cost']}}" data-cost="{{ $value['cost'] }}">{{ $value['cost'] }} RUB</h5></td>
+                    <td><h4 class="total_price" id="total_{{$value['id']}}">{{ $value['count']*$value['cost'] }} RUB</h4></td>
                 </tr>
                 @endforeach
 
@@ -81,6 +81,16 @@
     </div>
     <script type="text/javascript">
         $(document).ready(function() {
+            $('.input_count').change(function(){
+                var id = $(this).attr('id');
+                var count = $(this).val();
+                var cost = $('#cost_'+id).text();
+                var value = $('#total_'+id).text();
+                console.log(cost);
+                alertify.message('12 '+cost);
+
+            });
+
             /*$('.deleteItemOnCart').click(function(){
                 var id = $(this).attr('data-id');
                 var type = $(this).attr('data-type');

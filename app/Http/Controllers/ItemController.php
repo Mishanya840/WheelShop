@@ -27,6 +27,7 @@ class ItemController extends Controller {
 			default:
 				abort(503, 'Erroe type on rout');
 		}
+		$image = $item->images;
 		return $item;
 	}
 

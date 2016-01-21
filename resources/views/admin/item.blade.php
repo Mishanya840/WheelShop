@@ -7,12 +7,23 @@
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <input type="hidden" name="typeItem" value="{{ $type }}">
                 <input type="hidden" name="id" value="{{ $id or $item['id'] }}">
-                <div class="col-md-7 left-part">
-                    <img class="col-md-12" src="{{$item->toArray()['images'][0]['url'] or '#'}}">
-                    <input type="file" id="image" name="image[]"  accept="image/jpeg,image/png">
+                <div class="col-md-6 left-part">
+                    <div class="slider-for ">
+                        @foreach($item->toArray()['images'] as $image)
+                            <div class="image-item">
+                                <img class="col-md-12 slick-slide " src="{{$image['url'] or '#'}}">
+                            </div>
+                        @endforeach
+                    </div>
+                    <div class="slider-nav">
+                        @foreach($item->toArray()['images'] as $image)
+                            <img class="col-md-12 slick-slide" src="{{$image['url'] or '#'}}">
+                        @endforeach
+                    </div>
+
                 </div>
 
-                <div class="col-md-4 right-part">
+                <div class="col-md-5 right-part">
                     <h4>Наименование</h4>
                     <input class="text-left first-up item-title form-control " name="title" value="{{$item['title']}}">
                     <h4>Цена</h4>
@@ -49,7 +60,7 @@
                                     <td><input type="text" class="form-control" name="width" value=" {{$item['width']}} "></td>
                                     @unless($type == 'disk')
                                         <td><input type="text" class="form-control" name="profile" value=" {{$item['profile']}} "></td>
-                                        <td><input type="checkbox" name="winter" value="1"  {{$item['winter'] ? 'checked' : ''}} "></td>
+                                        <td><input type="checkbox" name="winter" value="1"  {{  $item['winter'] ? 'checked' : ''}} ></td>
                                     @endunless
                                     @if($type == 'disk')
                                         <td><input type="text" class="form-control" name="PCD" value=" {{$item['PCD']}} "></td>
@@ -78,6 +89,8 @@
                                     </tr>
                                 @endif
                             </table>
+                            <p class="text-add-file">Добавить изображения:  </p>
+                            <input  type="file" id="image" name="image[]"  accept="image/jpeg,image/png" class="text-add-file" multiple>
                             <button type="submit" id="change" name="change" class="col-md-6">Сохранить</button>
                         </div>
                     </div>
@@ -88,6 +101,30 @@
     </div>
     <script>
         $(document).ready(function() {
+            $('.image-item').click(function(){
+                alertify.confirm("Вы точно ходите удалить изображение?",
+                        function(){
+
+                            alertify.success('Удаленно');
+                        },
+                        function(){
+                        });
+            });
+            $('.slider-for').slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                fade: true,
+                asNavFor: '.slider-nav'
+            });
+            $('.slider-nav').slick({
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                arrows: false,
+                asNavFor: '.slider-for',
+                centerMode: true,
+                focusOnSelect: true,
+                lazyLoad: 'ondemand',
+            });
             $('#chagggnge').click(function () {
 
                 var id = $('input[name="id"]').val();

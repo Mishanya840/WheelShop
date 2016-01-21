@@ -67,9 +67,9 @@ class ListController extends Controller {
 						'titleWheel' => 'Колёса в сборе'
 				],
 				'list' => [
-					'listDisk' => $listDisk,
-					'listTire' => $listTire,
-					'listWheel' => $listWheel
+					'listDisk' => $listDisk->toArray(),
+					'listTire' => $listTire->toArray(),
+					'listWheel' => $listWheel->toArray()
 				]
 		]);
 	}

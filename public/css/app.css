@@ -14,6 +14,26 @@ body {
   font-weight: 100;
   font-family: 'Lato';
 }
+.image-item{
+  pointer-events: none;
+}
+.image-item:before{
+  content: "✖";
+  font-size: 30px;
+  color: red;
+  position: absolute;
+  z-index: 10;
+  top: 30px;
+  right: 30px;
+  cursor: pointer;
+  pointer-events: all;
+}
+.left-part{
+  position: relative;
+}
+.text-add-file{
+  display: inline-block; !important;
+}
 .cart-relative-div {
   position: relative;
   height: 50px;
